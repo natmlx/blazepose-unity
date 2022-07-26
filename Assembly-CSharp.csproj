@@ -36,8 +36,8 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets/BlazePoseSample.cs" />
      <Compile Include="Assets/Landmark3DVisualizer.cs" />
+     <Compile Include="Assets/BlazePoseSample.cs" />
      <Compile Include="Assets/HoverCamera.cs" />
      <Compile Include="Assets/LandmarkVisualizer.cs" />
     <Reference Include="UnityEngine">
@@ -661,6 +661,9 @@
     <Reference Include="mscorlib">
         <HintPath>/Applications/Unity/Hub/Editor/2021.3.4f1/Unity.app/Contents/NetStandard/compat/2.1.0/shims/netfx/mscorlib.dll</HintPath>
     </Reference>
+    <Reference Include="NatML.ML">
+        <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/NatML.ML.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
         <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
@@ -691,6 +694,9 @@
     <Reference Include="Unity.VisualScripting.State.Editor">
         <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="NatML.Devices">
+        <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/NatML.Devices.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
         <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
@@ -703,11 +709,14 @@
     <Reference Include="UnityEditor.UI">
         <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-        <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+    <Reference Include="NatML.Vision.BlazePose.Detector">
+        <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/NatML.Vision.BlazePose.Detector.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
         <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PlasticSCM.Editor">
+        <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
         <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -724,8 +733,17 @@
     <Reference Include="Unity.Services.Core.Analytics">
         <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/Unity.Services.Core.Analytics.dll</HintPath>
     </Reference>
+    <Reference Include="NatML.Hub.Editor">
+        <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/NatML.Hub.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="NatML.ML.Editor">
+        <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/NatML.ML.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
         <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="NatML.Hub">
+        <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/NatML.Hub.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core.Environments">
         <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/Unity.Services.Core.Environments.dll</HintPath>
@@ -733,35 +751,17 @@
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-        <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-        <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
-    </Reference>
-    <Reference Include="NatML.Vision.BlazePose.Detector">
-        <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/NatML.Vision.BlazePose.Detector.dll</HintPath>
-    </Reference>
-    <Reference Include="NatML.ML.Editor">
-        <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/NatML.ML.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="NatML.ML">
-        <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/NatML.ML.dll</HintPath>
-    </Reference>
-    <Reference Include="NatML.Hub.Editor">
-        <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/NatML.Hub.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="NatML.Hub">
-        <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/NatML.Hub.dll</HintPath>
-    </Reference>
-    <Reference Include="NatML.Devices">
-        <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/NatML.Devices.dll</HintPath>
-    </Reference>
     <Reference Include="NatML.Devices.Editor">
         <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/NatML.Devices.Editor.dll</HintPath>
     </Reference>
     <Reference Include="NatML.Vision.BlazePose">
         <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/NatML.Vision.BlazePose.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor">
+        <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State">
+        <HintPath>/Users/yusuf/Documents/Projects/BlazePose-Sample/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

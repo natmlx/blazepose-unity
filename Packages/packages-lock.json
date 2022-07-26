@@ -26,17 +26,18 @@
       "url": "https://registry.npmjs.com"
     },
     "ai.natml.vision.blazepose": {
-      "version": "file:/Users/yusuf/Documents/Projects/NatML-API/Assets/ML/blazepose",
+      "version": "1.0.0",
       "depth": 0,
-      "source": "local",
+      "source": "registry",
       "dependencies": {
         "ai.natml.natml": "1.0.13",
         "ai.natml.vision.blazepose.detector": "1.0.2"
-      }
+      },
+      "url": "https://registry.npmjs.com"
     },
     "ai.natml.vision.blazepose.detector": {
       "version": "1.0.2",
-      "depth": 0,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "ai.natml.natml": "1.0.13"
