@@ -5,7 +5,7 @@ obj/
 Logs/
 
 # IDE
-#.vscode/
+.vscode/
 .gradle/
 .vs/
 
@@ -13,10 +13,6 @@ Logs/
 Assets/NatML
 Assets/NatML.meta
 ProjectSettings/NatMLHub.asset
-
-# ARFoundation Remote
-ARFoundationRemoteInstaller
-ARFoundationRemoteCompanionApp/
 
 # Misc
 .DS_Store

@@ -1,0 +1,28 @@
+{
+    "name": "ai.natml.vision.blazepose",
+    "version": "1.0.1",
+    "displayName": "BlazePose",
+    "description": "Pose detection with MediaPipe BlazePose.",
+    "unity": "2020.3",
+    "dependencies": {
+        "ai.natml.natml": "1.0.17",
+        "ai.natml.vision.blazepose.detector": "1.0.2"
+    },
+    "keywords": [
+        "natml",
+        "machine learning",
+        "ml",
+        "aritificial intelligence",
+        "face detection",
+        "mediapipe",
+        "face filters",
+        "augmented reality"
+    ],
+    "author": {
+        "name": "NatML",
+        "email": "hi@natml.ai",
+        "url": "https://github.com/natmlx"
+    },
+    "license": "Apache-2.0",
+    "repository": "github:natml-hub/BlazePose"
+}

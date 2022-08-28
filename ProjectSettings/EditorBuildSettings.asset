@@ -9,5 +9,5 @@ EditorBuildSettings:
     path: Assets/BlazePoseSample.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
-    ai.natml.hub.settings: {fileID: 11400000, guid: ca9ac81da9a1a4e77abba7c3ef911bec, type: 2}
-    ai.natml.natdevice.settings: {fileID: 11400000, guid: 6a45e37b6acaf4061802856c6426c7f3, type: 2}
+    ai.natml.hub.settings: {fileID: 11400000, guid: f9facbaaa014e4ae582287fc19ac3e66, type: 2}
+    ai.natml.natdevice.settings: {fileID: 11400000, guid: a6051d09c34c0429abb24b5e8274207f, type: 2}
