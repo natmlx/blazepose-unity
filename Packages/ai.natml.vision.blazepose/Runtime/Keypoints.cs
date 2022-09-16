@@ -214,8 +214,8 @@ namespace NatML.Vision {
 
             #region --Operations--
             internal readonly float[] data;
-            internal readonly Vector3 scale;
-            internal readonly Matrix4x4 transformation;
+            private readonly Vector3 scale;
+            private readonly Matrix4x4 transformation;
 
             internal Keypoints (float[] data, MLImageType imageType, Matrix4x4 transformation) {
                 this.data = data;

@@ -26,16 +26,16 @@ namespace NatML.Vision {
             /// <summary>
             /// Estimated world-space 3D keypoints.
             /// </summary>
-            public readonly Keypoints3D keypoints3d;
+            public readonly Keypoints3D keypoints3D;
             #endregion
 
 
             #region --Operations--
 
-            internal Pose (float score, Keypoints keypoints, Keypoints3D keypoints3d) {
+            internal Pose (float score, Keypoints keypoints, Keypoints3D keypoints3D) {
                 this.score = score;
                 this.keypoints = keypoints;
-                this.keypoints3d = keypoints3d;
+                this.keypoints3D = keypoints3D;
             }
             #endregion
         }

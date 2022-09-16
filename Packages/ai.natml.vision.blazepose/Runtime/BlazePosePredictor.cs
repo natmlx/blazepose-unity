@@ -47,7 +47,7 @@ namespace NatML.Vision {
             var keypointData = new MLArrayFeature<float>(outputFeatures[0]).ToArray();
             var keypoint3DData = new MLArrayFeature<float>(outputFeatures[4]).ToArray();
             var keypoints = new Keypoints(keypointData, inputType, Matrix4x4.identity);
-            var keypoints3d = new Keypoints3D(keypoint3DData, Matrix4x4.identity);
+            var keypoints3d = new Keypoints3D(keypoint3DData);
             var pose = new Pose(score, keypoints, keypoints3d);
             return pose;
         }

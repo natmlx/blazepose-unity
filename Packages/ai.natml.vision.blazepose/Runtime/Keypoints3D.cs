@@ -191,24 +191,14 @@ namespace NatML.Vision {
             /// <summary>
             /// Get the keypoints for a given index.
             /// </summary>
-            public readonly Vector3 this [int idx] {
-                get {
-                    var keypoint = new Vector3(data[3 * idx], -data[3 * idx + 1], data[3 * idx + 2]);
-                    var result = transformation.MultiplyPoint3x4(keypoint);
-                    return result;
-                }
-            }
+            public readonly Vector3 this [int idx] => new Vector3(data[3 * idx], -data[3 * idx + 1], data[3 * idx + 2]);
             #endregion
 
 
             #region --Operations--
-            internal readonly float[] data;
-            internal readonly Matrix4x4 transformation;
+            private readonly float[] data;
 
-            internal Keypoints3D (float[] data, Matrix4x4 transformation) {
-                this.data = data;
-                this.transformation = transformation;
-            }
+            internal Keypoints3D (float[] data) => this.data = data;
 
             readonly IEnumerator<Vector3> IEnumerable<Vector3>.GetEnumerator () {
                 for (var i = 0; i < Count; ++i)

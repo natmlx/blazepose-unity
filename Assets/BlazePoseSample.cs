@@ -59,7 +59,7 @@ namespace NatML.Examples {
             var pose = poses[0];
             visualizer.Clear();
             visualizer.Render(pose.keypoints, Color.green);
-            visualizer3D.Render(pose.keypoints3d);
+            visualizer3D.Render(pose.keypoints3D);
         }
     }
 }

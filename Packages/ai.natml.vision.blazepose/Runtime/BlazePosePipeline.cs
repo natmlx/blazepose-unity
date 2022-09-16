@@ -66,7 +66,7 @@ namespace NatML.Vision {
                 // Create pose
                 var inputType = predictorModel.inputs[0] as MLImageType;
                 var keypoints = new BlazePosePredictor.Keypoints(landmarks.keypoints.data, inputType, detection.regionOfInterestToImageMatrix);
-                var pose = new BlazePosePredictor.Pose(landmarks.score, keypoints, landmarks.keypoints3d);
+                var pose = new BlazePosePredictor.Pose(landmarks.score, keypoints, landmarks.keypoints3D);
                 result.Add(pose);
             }
             // Return
