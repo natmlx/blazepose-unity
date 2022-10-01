@@ -54,8 +54,9 @@ namespace NatML.Vision {
             input.aspectMode = detectorData.aspectMode;
             var detectedPoses = detector.Predict(input);
             // Predict landmarks
-            var result = new List<BlazePosePredictor.Pose>(Mathf.Min(detectedPoses.Length, maxDetections));
-            for (var i = 0; i < result.Capacity; ++i) {
+            var capacity = Mathf.Min(detectedPoses.Length, maxDetections);
+            var result = new List<BlazePosePredictor.Pose>(capacity);
+            for (var i = 0; i < capacity; ++i) {
                 // Extract ROI
                 var detection = detectedPoses[i];
                 var roi = input.RegionOfInterest(detection.regionOfInterest, -detection.rotation, Color.black);

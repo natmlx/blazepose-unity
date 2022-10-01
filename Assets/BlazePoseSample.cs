@@ -50,9 +50,7 @@ namespace NatML.Examples {
             if (posePipeline == null)
                 return;
             // Predict
-            var previewTexture = previewTextureOutput.texture;
-            var imageFeature = new MLImageFeature(previewTexture.GetRawTextureData<byte>(), previewTexture.width, previewTexture.height);
-            var poses = posePipeline.Predict(imageFeature);
+            var poses = posePipeline.Predict(previewTextureOutput.texture);
             // Visualize
             if (poses.Length == 0)
                 return;

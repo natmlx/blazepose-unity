@@ -32,20 +32,19 @@ Then detect poses in the image:
 ```csharp
 // Create image feature
 Texture2D image = ...;
-var imageFeature = new MLImageFeature(image);
 // Detect poses in the image
-BlazePosePredictor.Pose[] faces = pipeline.Predict(imageFeature);
+BlazePosePredictor.Pose[] poses = pipeline.Predict(image);
 ```
 
 ___
 
 ## Requirements
-- Unity 2020.3+
+- Unity 2021.2+
 
 ## Quick Tips
+- Join the [NatML community on Discord](https://hub.natml.ai/community).
 - Discover more ML models on [NatML Hub](https://hub.natml.ai).
 - See the [NatML documentation](https://docs.natml.ai/unity).
-- Join the [NatML community on Discord](https://hub.natml.ai/community).
 - Discuss [NatML on Unity Forums](https://forum.unity.com/threads/open-beta-natml-machine-learning-runtime.1109339/).
 - Contact us at [hi@natml.ai](mailto:hi@natml.ai).
 

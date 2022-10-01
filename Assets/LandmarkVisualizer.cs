@@ -17,6 +17,7 @@ namespace NatML.Examples.Visualizers {
 
         #region --Inspector--
         /// <summary>
+        /// Keypoint prefab.
         /// </summary>
         public Image keypoint;
         #endregion
@@ -24,6 +25,7 @@ namespace NatML.Examples.Visualizers {
 
         #region --Client API--
         /// <summary>
+        /// Get or set the detection image.
         /// </summary>
         public Texture2D image {
             get => rawImage.texture as Texture2D;
@@ -34,15 +36,17 @@ namespace NatML.Examples.Visualizers {
         }
 
         /// <summary>
+        /// Render a 2D pose.
         /// </summary>
-        /// <param name="pose"></param>
-        /// <param name="color"></param>
+        /// <param name="pose">Pose keypoints in normalized coordinates.</param>
+        /// <param name="color">Pose keypoint color.</param>
         public void Render (IEnumerable<Vector4> pose, Color color) {
             foreach (var point in pose)
                 AddKeypoint(point, color);
         }
 
         /// <summary>
+        /// Clear all rendered poses.
         /// </summary>
         public void Clear () {
             foreach (var obj in current)
@@ -62,7 +66,7 @@ namespace NatML.Examples.Visualizers {
             aspectFitter = GetComponent<AspectRatioFitter>();
         }
 
-        public void AddKeypoint (Vector2 point, Color color) {
+        private void AddKeypoint (Vector2 point, Color color) {
             // Instantiate
             var prefab = Instantiate(keypoint, transform);
             prefab.gameObject.SetActive(true);
