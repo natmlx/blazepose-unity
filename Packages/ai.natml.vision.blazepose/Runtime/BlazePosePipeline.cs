@@ -29,8 +29,8 @@ namespace NatML.Vision {
         public BlazePosePipeline (MLModelData detector, MLModelData predictor, int maxDetections = Int32.MaxValue) {
             this.detectorData = detector;
             this.predictorData = predictor;
-            this.detectorModel = detector.Deserialize() as MLEdgeModel;
-            this.predictorModel = predictor.Deserialize() as MLEdgeModel;
+            this.detectorModel = new MLEdgeModel(detector);
+            this.predictorModel = new MLEdgeModel(predictor);
             this.detector = new BlazePoseDetector(detectorModel);
             this.predictor = new BlazePosePredictor(predictorModel);
             this.maxDetections = maxDetections;

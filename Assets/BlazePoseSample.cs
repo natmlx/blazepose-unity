@@ -5,11 +5,9 @@
 
 namespace NatML.Examples {
 
-    using System.Threading.Tasks;
     using UnityEngine;
     using NatML.Devices;
     using NatML.Devices.Outputs;
-    using NatML.Features;
     using NatML.Vision;
     using Visualizers;
 
@@ -20,7 +18,7 @@ namespace NatML.Examples {
         public Landmark3DVisualizer visualizer3D;
 
         CameraDevice cameraDevice;
-        TextureOutput previewTextureOutput;
+        TextureOutput cameraTextureOutput;
         BlazePosePipeline posePipeline;
 
         async void Start () {
@@ -34,11 +32,11 @@ namespace NatML.Examples {
             var query = new MediaDeviceQuery(MediaDeviceCriteria.CameraDevice);
             cameraDevice = query.current as CameraDevice;
             // Start the camera preview
-            previewTextureOutput = new TextureOutput();
-            cameraDevice.StartRunning(previewTextureOutput);
+            cameraTextureOutput = new TextureOutput();
+            cameraDevice.StartRunning(cameraTextureOutput);
             // Display the preview
-            var previewTexture = await previewTextureOutput;
-            visualizer.image = previewTexture;
+            await cameraTextureOutput.textureCreated;
+            visualizer.image = cameraTextureOutput.texture;
             // Create the BlazePose pipeline
             var detectorModelData = await MLModelData.FromHub("@natml/blazepose-detector");
             var predictorModelData = await MLModelData.FromHub("@natml/blazepose-landmark");
@@ -50,7 +48,7 @@ namespace NatML.Examples {
             if (posePipeline == null)
                 return;
             // Predict
-            var poses = posePipeline.Predict(previewTextureOutput.texture);
+            var poses = posePipeline.Predict(cameraTextureOutput.texture);
             // Visualize
             if (poses.Length == 0)
                 return;
