@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 357584624}
   - component: {fileID: 357584623}
   - component: {fileID: 357584625}
+  - component: {fileID: 357584627}
   - component: {fileID: 357584626}
   m_Layer: 5
   m_Name: Preview
@@ -292,6 +293,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keypoint: {fileID: 878973901}
+--- !u!114 &357584627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357584621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 145a5a333d6e14379ae91956c0b3373e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraManager: {fileID: 2111620525}
+  viewMode: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,6 +1040,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2111620523}
+  - component: {fileID: 2111620525}
   - component: {fileID: 2111620524}
   m_Layer: 0
   m_Name: BlazePoseSample
@@ -1060,5 +1076,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dc1abe2732cf4c29bd30fa0833535e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraManager: {fileID: 2111620525}
   visualizer: {fileID: 357584626}
   visualizer3D: {fileID: 1522798682}
+--- !u!114 &2111620525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111620522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98622613d505143a9a06b4b11b0a82cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resolution: 3
+  capabilities: 1
+  playOnAwake: 1
+  focusMode: 0
+  exposureMode: 0
+  OnFrame:
+    m_PersistentCalls:
+      m_Calls: []
