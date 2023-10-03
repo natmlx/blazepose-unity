@@ -1,6 +1,6 @@
 /* 
 *   BlazePose
-*   Copyright (c) 2022 NatML Inc. All Rights Reserved.
+*   Copyright (c) 2023 NatML Inc. All Rights Reserved.
 */
 
 namespace NatML.Examples.Visualizers {

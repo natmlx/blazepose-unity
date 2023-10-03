@@ -1,16 +1,14 @@
 /* 
 *   BlazePose
-*   Copyright (c) 2022 NatML Inc. All Rights Reserved.
+*   Copyright (c) 2023 NatML Inc. All Rights Reserved.
 */
 
 namespace NatML.Examples {
 
     using UnityEngine;
-    using NatML.Devices;
-    using NatML.Devices.Outputs;
-    using NatML.VideoKit;
     using NatML.Vision;
     using Visualizers;
+    using VideoKit;
 
     public sealed class BlazePoseSample : MonoBehaviour {
 
@@ -25,11 +23,9 @@ namespace NatML.Examples {
 
         private async void Start () {
             // Create the BlazePose pipeline
-            var detectorModelData = await MLModelData.FromHub("@natml/blazepose-detector");
-            var predictorModelData = await MLModelData.FromHub("@natml/blazepose-landmark");
-            pipeline = new BlazePosePipeline(detectorModelData, predictorModelData, maxDetections: 1);
+            pipeline = await BlazePosePipeline.Create(maxDetections: 1);
             // Listen for camera frames
-            cameraManager.OnFrame.AddListener(OnCameraFrame);
+            cameraManager.OnCameraFrame.AddListener(OnCameraFrame);
         }
 
         private void OnCameraFrame (CameraFrame frame) {
@@ -46,7 +42,7 @@ namespace NatML.Examples {
 
         private void OnDisable () {
             // Stop listening for camera frames
-            cameraManager.OnFrame.RemoveListener(OnCameraFrame);
+            cameraManager.OnCameraFrame.RemoveListener(OnCameraFrame);
             // Dispose the pipeline
             pipeline?.Dispose();
         }

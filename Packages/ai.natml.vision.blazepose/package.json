@@ -1,12 +1,12 @@
 {
     "name": "ai.natml.vision.blazepose",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "displayName": "BlazePose",
     "description": "Pose detection with MediaPipe BlazePose.",
-    "unity": "2021.2",
+    "unity": "2022.3",
     "dependencies": {
-        "ai.natml.natml": "1.0.19",
-        "ai.natml.vision.blazepose.detector": "1.0.2"
+        "ai.natml.natml": "1.1.16",
+        "ai.natml.vision.blazepose.detector": "1.0.3"
     },
     "keywords": [
         "natml",
@@ -24,5 +24,5 @@
         "url": "https://github.com/natmlx"
     },
     "license": "Apache-2.0",
-    "repository": "github:natml-hub/BlazePose"
+    "repository": "github:natmlx/blazepose-unity"
 }

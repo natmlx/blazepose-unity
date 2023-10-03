@@ -1,6 +1,6 @@
 /* 
 *   BlazePose
-*   Copyright (c) 2022 NatML Inc. All Rights Reserved.
+*   Copyright (c) 2023 NatML Inc. All Rights Reserved.
 */
 
 namespace NatML.Examples.Visualizers {
@@ -8,7 +8,7 @@ namespace NatML.Examples.Visualizers {
     using System.Collections.Generic;
     using UnityEngine;
     using UnityEngine.UI;
-    using NatML.VideoKit.UI;
+    using VideoKit.UI;
 
     /// <summary>
     /// Lightweight 2D pose visualizer.
@@ -31,6 +31,11 @@ namespace NatML.Examples.Visualizers {
         /// <param name="pose">Pose keypoints in normalized coordinates.</param>
         /// <param name="color">Pose keypoint color.</param>
         public void Render (params IEnumerable<Vector4>[] poses) {
+            // Clear
+            foreach (var point in current)
+                GameObject.Destroy(point);
+            current.Clear();
+            // Render
             foreach (var pose in poses)
                 foreach (var point in pose)
                     AddKeypoint(point, Color.green);

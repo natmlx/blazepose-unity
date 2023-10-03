@@ -1,7 +1,7 @@
 {
     "name": "NatML.Vision.BlazePose",
     "references": [
-		"NatML.ML",
+		"NatML.Runtime",
         "NatML.Vision.BlazePose.Detector"
 	],
     "includePlatforms": [

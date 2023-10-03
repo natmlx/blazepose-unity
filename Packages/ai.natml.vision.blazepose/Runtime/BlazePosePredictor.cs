@@ -1,11 +1,12 @@
 /* 
 *   BlazePose
-*   Copyright (c) 2022 NatML Inc. All Rights Reserved.
+*   Copyright (c) 2023 NatML Inc. All Rights Reserved.
 */
 
 namespace NatML.Vision {
 
     using System;
+    using System.Threading.Tasks;
     using UnityEngine;
     using NatML.Features;
     using NatML.Internal;
@@ -20,10 +21,14 @@ namespace NatML.Vision {
 
         #region --Client API--
         /// <summary>
-        /// Create the BlazePose landmark predictor.
+        /// BlazePose landmarks model.
         /// </summary>
-        /// <param name="model">BlazePose landmark ML model.</param>
-        public BlazePosePredictor (MLModel model) => this.model = model as MLEdgeModel;
+        public readonly MLEdgeModel model;
+
+        /// <summary>
+        /// Predictor tag.
+        /// </summary>
+        public const string Tag = "@natml/blazepose-landmark";        
 
         /// <summary>
         /// Detect poses in an image.
@@ -51,13 +56,32 @@ namespace NatML.Vision {
             var pose = new Pose(score, keypoints, keypoints3d);
             return pose;
         }
+
+        /// <summary>
+        /// Dispose the predictor and release resources.
+        /// </summary>
+        public void Dispose () => model.Dispose();
+
+        /// <summary>
+        /// Create the BlazePose landmark predictor.
+        /// </summary>
+        /// <param name="configuration">Edge model configuration.</param>
+        /// <param name="accessKey">NatML access key.</param>
+        /// <returns>Created predictor.</returns>
+        public static async Task<BlazePosePredictor> Create (
+            MLEdgeModel.Configuration configuration = null,
+            string accessKey = null
+        ) {
+            var model = await MLEdgeModel.Create(Tag, configuration, accessKey);
+            var predictor = new BlazePosePredictor(model);
+            return predictor;
+        }
         #endregion
 
 
         #region --Operations--
-        private readonly MLEdgeModel model;
 
-        void IDisposable.Dispose () { } // Not used
+        private BlazePosePredictor (MLModel model) => this.model = model as MLEdgeModel;
         #endregion
     }
 }
